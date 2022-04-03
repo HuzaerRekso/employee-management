@@ -12,7 +12,7 @@
     <artifactId>employee-management</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>employee-management</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Simple app about CRUD employee</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -25,6 +25,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.huzaer</groupId>
+            <artifactId>core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
@@ -34,6 +45,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
