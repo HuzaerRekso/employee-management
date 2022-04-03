@@ -55,6 +55,7 @@ public class EmployeeGradeServiceImpl implements EmployeeGradeService {
 
         currentEmployeeGrade.setGradeValue(employeeGrade.getGradeValue());
         currentEmployeeGrade.setGradeName(employeeGrade.getGradeName());
+        currentEmployeeGrade.setUpdatedTime(LocalDateTime.now());
         return populateEmployeeGradeData(employeeGradeRepository.save(currentEmployeeGrade));
     }
 
@@ -78,8 +79,8 @@ public class EmployeeGradeServiceImpl implements EmployeeGradeService {
             }
             Paging pagingResult = new Paging();
             pagingResult.setPage(employeeGrades.getNumber());
-            pagingResult.setTotalpage(employeeGrades.getTotalPages());
-            pagingResult.setTotalrecord(employeeGrades.getTotalElements());
+            pagingResult.setTotalPage(employeeGrades.getTotalPages());
+            pagingResult.setTotalRecord(employeeGrades.getTotalElements());
 
             response.setPaging(pagingResult);
             response.setResult(result);

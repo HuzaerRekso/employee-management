@@ -17,6 +17,7 @@ import org.springframework.util.StringUtils;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +57,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         currentEmployee.setEmployeeGrade(employeeGrade);
         currentEmployee.setEmployeeName(employee.getEmployeeName());
         currentEmployee.setEmployeeSalary(employee.getEmployeeSalary());
+        currentEmployee.setUpdatedTime(LocalDateTime.now());
         return populateEmployeeData(employeeRepository.save(currentEmployee), employeeGrade);
     }
 
@@ -84,8 +86,8 @@ public class EmployeeServiceImpl implements EmployeeService {
             }
             Paging pagingResult = new Paging();
             pagingResult.setPage(employee.getNumber());
-            pagingResult.setTotalpage(employee.getTotalPages());
-            pagingResult.setTotalrecord(employee.getTotalElements());
+            pagingResult.setTotalPage(employee.getTotalPages());
+            pagingResult.setTotalRecord(employee.getTotalElements());
 
             response.setPaging(pagingResult);
             response.setResult(result);

@@ -111,6 +111,6 @@ class EmployeeGradeControllerTest {
         deletedResponse = restTemplate.getForObject(getRootUrl() + "/api/employeegrade?gradeName=Grade Name Updated", deletedResponse.getClass());
         assertNotNull(deletedResponse);
         assertNotNull(deletedResponse.getStatus());
-        assertEquals(Status.ERROR_NOTFOUND_CODE, deletedResponse.getStatus().getResponsecode());
+        assertEquals(Status.ERROR_NOTFOUND_CODE, deletedResponse.getStatus().getResponseCode());
     }
 }

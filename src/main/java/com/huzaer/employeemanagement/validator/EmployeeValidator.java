@@ -37,7 +37,7 @@ public class EmployeeValidator extends BaseValidator {
 
     private void checkName(String employeeName) {
         notBlank(employeeName, getMandatoryMsg("employeeName"));
-        isAlphabetSpace(employeeName, Message.get("field.format.alphabet", "employeeName"));
+        isAlphabetSpace(employeeName, Message.get("field.format.alphabet.space", "employeeName"));
         isMax(employeeName, EmployeeData.NAME_LENGTH, Message.get("field.format.max", "employeeName",
                 String.valueOf(EmployeeData.NAME_LENGTH)));
     }
